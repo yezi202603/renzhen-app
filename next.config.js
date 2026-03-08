@@ -11,6 +11,11 @@ const nextConfig = {
       },
     ],
   },
+  // 禁用静态导出，使用 SSR
+  onDemandEntries: {
+    maxInactiveAge: 60 * 1000,
+    pagesBufferLength: 2,
+  },
 }
 
 module.exports = nextConfig
