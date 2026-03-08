@@ -32,7 +32,7 @@ export default function RegisterPage() {
       if (result.user) {
         const { profiles } = await import('@/lib/supabase')
         await profiles.create({
-          id: data.user.id,
+          id: result.user.id,
           email: formData.email,
           nickname: formData.nickname,
           gender: formData.gender,
