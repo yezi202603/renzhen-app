@@ -1,0 +1,33 @@
+{
+  "name": "renzhen-app",
+  "version": "1.0.0",
+  "private": true,
+  "description": "认真 - 严肃年轻人的交友平台",
+  "scripts": {
+    "dev": "npm run dev --workspace=apps/web",
+    "build": "npm run build --workspace=apps/web",
+    "start": "npm run start --workspace=apps/web",
+    "lint": "npm run lint --workspace=apps/web",
+    "db:generate": "npm run generate --workspace=packages/database",
+    "db:migrate": "npm run migrate --workspace=packages/database"
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/renzhen-dating/renzhen-app.git"
+  },
+  "keywords": [
+    "dating",
+    "relationship",
+    "nextjs",
+    "supabase"
+  ],
+  "author": "认真团队",
+  "license": "MIT"
+}
