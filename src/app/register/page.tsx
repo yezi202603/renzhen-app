@@ -25,11 +25,11 @@ export default function RegisterPage() {
 
     try {
       // 注册账号
-      const { data, error } = await auth.signUp(formData.email, formData.password)
-      if (error) throw error
+      const result = await auth.signUp(formData.email, formData.password)
+      if (!result.user) throw new Error('注册失败')
 
       // 创建用户资料
-      if (data.user) {
+      if (result.user) {
         const { profiles } = await import('@/lib/supabase')
         await profiles.create({
           id: data.user.id,
